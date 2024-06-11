@@ -1,0 +1,423 @@
+###
+
+GET  http://localhost:8000/state/states
+
+###
+GET  http://localhost:8000/state/state/1
+###
+
+DELETE http://localhost:8000/state/delete/3
+###
+
+POST  http://localhost:8000/state/insert
+Content-Type: application/json
+
+{
+   
+    "name": "Kigali",
+    "code":"123"
+}
+
+###
+
+PUT http://localhost:8000/state/update/4
+Content-Type: application/json
+
+{
+   
+    "name": "uganda",
+    "code":"256"
+}
+
+
+###
+#  GETTING ALL USERS----------------------------------------------------------------
+
+GET http://localhost:8000/users/Users
+
+###
+
+# Getting user by ID
+GET http://localhost:8000/users/Users/11
+
+###
+#Deleting user by ID
+DELETE http://localhost:8000/users/Users/152
+
+###
+
+
+POST  http://localhost:8000/users/insert
+Content-Type: application/json
+
+{
+
+  "name": "Faith KIMANI wairimu",
+  "contact_phone": "+254791339188",
+  "phone_verified": true,
+  "email": "elijahkimani1293@gmail.com",
+  "email_verified": true,
+  "confirmation_code": "65566",
+  "password": "407363"
+ # "created_at": null
+#   "updated_at": null
+}
+
+
+###
+POST  http://localhost:8000/Auth/register
+Content-Type: application/json
+
+  { 
+    "usersId": 1,
+    "username": "example_user",
+    "password": "secretpassword"
+    
+  }
+
+# GETTING_ ALL ADDRESS----------------------------------------------------------------
+###
+GET http://localhost:8000/address/address
+
+ 
+ GETTING ADDRESS BY_ID
+###
+GET http://localhost:8000/address/address/7
+
+DELETTING ADDRESS
+###
+
+DELETE http://localhost:8000/address/address/5
+
+
+
+ISERTING ADDRESS
+
+###
+ POST http://localhost:8000/address/insert
+ Content-Type: application/json
+
+{
+    
+    "street": "Kigali",
+    "postal_code": "123"
+ 
+}
+
+###
+UPDATING ADDRESS
+ PUT http://localhost:8080/address/update/1
+     Content-Type: application/json
+
+
+
+# RESTAURANT----------------------------------------------------------------------- 
+
+ # GETTING_ ALL CITY
+###
+GET http://localhost:8000/city/city
+
+ 
+ GETTING CITY BY_ID
+###
+GET http://localhost:8000/city/city/5
+
+DELETTING CITY
+###
+
+DELETE http://localhost:8000/city/city/50
+
+
+
+ISERTING CITY
+###
+
+POST http://localhost:8000/city/insert
+ Content-Type: application/json
+
+ {
+     "name": "nai",
+  "state_id": 3242
+ }
+
+ 
+# RESTAURANT----------------------------------------------------------------
+
+ # GETTING_ ALL RESTAURANT
+###
+GET http://localhost:8000/restaurant/restaurant
+
+ 
+ GETTING RESTAURANT BY_ID
+###
+GET http://localhost:8000/restaurant/restaurant/3
+
+DELETTING RESTAURANT
+###
+
+DELETE http://localhost:8000/restaurant/delete/1
+
+
+
+ISERTING RESTAURANT
+###
+
+POST http://localhost:8000/restaurant/insert
+ Content-Type: application/json
+ 
+ {
+  "name": "kimkim",
+  "street_address": 3455,
+  "zip_code": 5985
+#   "city_id": "767"
+
+ }
+
+
+#  MENU_ITEM----------------------------------------------------------------
+
+
+ # GETTING_ ALL MENU_ITEM
+###
+GET http://localhost:8000/restaurant_owner/restaurant_owner
+
+ 
+ GETTING RESTAURANT_OWNER BY_ID
+###
+GET http://localhost:8000/restaurant_owner/restaurant_owner/5
+
+
+DELETTING RESTAURANT_OWNER
+###
+
+DELETE http://localhost:8000/restaurant_owner/delete/2
+
+
+
+ISERTING RESTAURANT_OWNER
+###
+
+POST http://localhost:8000/restaurant_owner/insert
+ Content-Type: application/json
+
+
+ #  CATEGORY----------------------------------------------------------------
+
+
+ # GETTING_ ALL CATEGORY
+###
+GET http://localhost:8000/category/category
+
+ 
+ GETTING CATEGORY BY_ID
+###
+GET http://localhost:8000/category/category/5
+
+DELETTING CATEGORY
+###
+
+DELETE http://localhost:8000/category/delete/1
+
+
+
+ISERTING CATEGORY
+###
+
+POST http://localhost:8000/category/insert
+ Content-Type: application/json
+
+
+
+ #  MENU_ITEM----------------------------------------------------------------
+
+
+ # GETTING_ ALL ITEM
+###
+GET http://localhost:8000/menu_item/menu_item
+
+ 
+ GETTING MENU_ITEM  BY_ID
+###
+GET http://localhost:8000/menu_item/menu_item/5
+
+DELETTING MENU_ITEM
+###
+
+DELETE http://localhost:8000/menu_item/delete/1
+
+
+
+ISERTING MENU_ITEM
+###
+
+POST http://localhost:8000/menu_item/insert
+ Content-Type: application/json
+
+
+
+
+
+
+
+ #  ORDER----------------------------------------------------------------
+
+
+ # GETTING_ ALL ORDER
+###
+GET http://localhost:8000/orders/orders
+
+ 
+ GETTING ORDER BY_ID
+###
+GET http://localhost:8000/orders/orders/5
+
+DELETTING ORDER
+###
+
+DELETE http://localhost:8000/orders/delete/1
+
+
+
+ISERTING ORDERS
+###
+
+POST http://localhost:8000/orders/insert
+ Content-Type: application/json
+
+
+ #  ORDER_MENU_ITEM----------------------------------------------------------------
+
+
+ # GETTING_ ALL ORDER_MENU_ITEM
+###
+GET http://localhost:8000/order_menu_item/order_menu_item
+
+ 
+ GETTING  ORDER_MENU_ITEM BY_ID
+###
+GET http://localhost:8000/order_menu_item/order_menu_item/5
+
+DELETTING ORDER_MENU_ITEM
+###
+
+DELETE http://localhost:8000/order_menu_item/delete/5
+
+
+
+ISERTING ORDER_MENU_ITEM
+###
+
+POST http://localhost:8000/order_menu_item/insert
+ Content-Type: application/json
+
+
+
+
+ #  ORDER_STATUS----------------------------------------------------------------
+
+
+ # GETTING_ ALL ORDER_STATUS
+###
+GET http://localhost:8000/order_status/order_status
+
+ 
+ GETTING  ORDER_STATUS  
+###
+GET http://localhost:8000/order_status/order_status/5
+
+DELETTING ORDER_STATUS
+###
+
+DELETE http://localhost:8000/order_status/delete/5
+
+
+
+ISERTING ORDER_STATUS
+###
+
+POST http://localhost:8000/order_status/insert
+ Content-Type: application/json
+
+
+
+
+ 
+ #  ORDER_CATALOG----------------------------------------------------------------
+
+
+ # GETTING_ ALL STATUS_CATALOG
+###
+GET http://localhost:8000/status_catalog/status_catalog
+
+ 
+ GETTING  STATUS_CATALOG
+###
+GET http://localhost:8000/status_catalog/status_catalog/5
+
+DELETTING STATUS_CATALOG
+###
+
+DELETE http://localhost:8000/status_catalog/delete/2
+
+
+
+ISERTING STATUS_STATUS
+###
+
+POST http://localhost:8000/status_catalog/insert
+ Content-Type: application/json
+
+
+ 
+ #  COMMENT----------------------------------------------------------------
+
+
+ # GETTING_ COMMENT
+###
+GET http://localhost:8000/comment/comment
+
+ 
+ GETTING  COMMENT
+###
+GET http://localhost:8000/comment/comment/1
+
+DELETTING COMMENT
+###
+
+DELETE http://localhost:8000/comment/delete/3
+
+
+
+ISERTING COMMENT
+###
+
+POST http://localhost:8000/comment/insert
+ Content-Type: application/json
+
+
+
+ 
+ #  DRIVER----------------------------------------------------------------
+
+
+ # GETTING_ DRIVER
+###
+GET http://localhost:8000/driver/driver
+
+ 
+ GETTING  DRIVER
+###
+GET http://localhost:8000/driver/driver/5
+
+DELETTING DRIVER
+###
+
+DELETE http://localhost:8000/driver/delete/5
+
+
+
+ISERTING DRIVER
+###
+
+POST http://localhost:8000/driver/insert
+ Content-Type: application/json
