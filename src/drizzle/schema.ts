@@ -149,11 +149,11 @@ export const driver = pgTable('driver', {
 
 export const roleEnum = pgEnum("role", ["admin", "user"])
 
-export const Auth = pgTable("auth_on_users", {
+export const Auth = pgTable("auth_Table", {
     id: serial("id").primaryKey(),
     userId: integer("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
-    password: varchar("password", { length: 100 }),
-    username: varchar("username", { length: 100 }),
+    password: varchar("password", { length: 50 }),
+    username: varchar("username", { length: 50}),
     role: roleEnum("role").default("user")
 });
 

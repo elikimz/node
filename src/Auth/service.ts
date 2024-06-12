@@ -13,7 +13,7 @@ export const getOneUsers= async (id:number):Promise<usersSelect | undefined> =>{
     return await db.query.users.findFirst({where:eq(users.id,id)})
 } 
 
-export const userLoginService = async (user: AuthOnUser) => {
+export const userLoginService = async (user: authOnUser) => {
     const { username, password } = user;
     return await db.query.Auth.findFirst({
         columns: {

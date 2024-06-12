@@ -14,10 +14,6 @@ authRouter.post('/register', zValidator('json', registerUserSchema, (result, c) 
 }), registerUser)
 
 
-usersRouter.get("/Users/:id",getOneUserData)
+usersRouter.get("/users/:id",getOneUserData)
 
-authRouter.post('/login', zValidator('json', loginUserSchema, (result, c) => {
-    if (!result.success) {
-        return c.json(result.error, 400)
-    }
-}), loginUser)
+authRouter.post('/login', loginUser)
