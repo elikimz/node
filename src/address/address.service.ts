@@ -19,8 +19,8 @@ export const InsertAddress= async (data:addressInsert)=>{
    return "address inserted"
 } 
 
-export const updateaddress= async (id:number)=>{
-    
-    return "updated successfully"
-
-}
+export const updateaddress= async (id:number,data:Partial<addressInsert>)=>{
+  await db.update(address).set(data).where(eq(address.id,id));
+     return "updated successfully"
+ 
+} 

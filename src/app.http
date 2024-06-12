@@ -3,7 +3,7 @@
 GET  http://localhost:8000/state/states
 
 ###
-GET  http://localhost:8000/state/state/1
+GET  http://localhost:8000/state/state/4
 ###
 
 DELETE http://localhost:8000/state/delete/3
@@ -15,7 +15,7 @@ Content-Type: application/json
 {
    
     "name": "Kigali",
-    "code":"123"
+    "code":"124"
 }
 
 ###
@@ -24,9 +24,8 @@ PUT http://localhost:8000/state/update/4
 Content-Type: application/json
 
 {
-   
-    "name": "uganda",
-    "code":"256"
+  "name": "Kigali",
+  "code": "1234"
 }
 
 
@@ -38,7 +37,7 @@ GET http://localhost:8000/users/Users
 ###
 
 # Getting user by ID
-GET http://localhost:8000/users/Users/11
+GET http://localhost:8000/users/Users/12
 
 ###
 #Deleting user by ID
@@ -62,18 +61,32 @@ Content-Type: application/json
  # "created_at": null
 #   "updated_at": null
 }
+###
+PUT http://localhost:8000/users/update/11
+Content-Type: application/json
 
+{
+  "name":"Faith KIMANI Kim",
+  "contact_phone": "+254791339166",
+  "phone_verified":false
+}
 
 ###
-POST  http://localhost:8000/Auth/register
+POST   http://localhost:8000/Auth/register
 Content-Type: application/json
 
   { 
-    "usersId": 1,
-    "username": "example_user",
-    "password": "secretpassword"
+    "userId":12,
+    "username": "Elijah Kimani",
+    "password": "40287654"
     
   }
+
+###
+GET http://localhost:8000/Auth/Users/12
+
+
+
 
 # GETTING_ ALL ADDRESS----------------------------------------------------------------
 ###
@@ -82,7 +95,7 @@ GET http://localhost:8000/address/address
  
  GETTING ADDRESS BY_ID
 ###
-GET http://localhost:8000/address/address/7
+GET http://localhost:8000/address/address/5
 
 DELETTING ADDRESS
 ###
@@ -105,9 +118,14 @@ ISERTING ADDRESS
 }
 
 ###
-UPDATING ADDRESS
- PUT http://localhost:8080/address/update/1
-     Content-Type: application/json
+
+PUT http://localhost:8000/address/update/5
+Content-Type: application/json
+
+     {
+      "street_address_1": "Kigali",
+      "pzip_code_2": "124"
+     }
 
 
 
@@ -137,8 +155,18 @@ POST http://localhost:8000/city/insert
 
  {
      "name": "nai",
-  "state_id": 3242
+     "state_id": 3242
  }
+
+###
+PUT http://localhost:8000/city/update/5
+Content-Type: application/json
+
+{
+  "name": "kimkim",
+  "state_id": null
+}
+
 
  
 # RESTAURANT----------------------------------------------------------------
@@ -150,7 +178,7 @@ GET http://localhost:8000/restaurant/restaurant
  
  GETTING RESTAURANT BY_ID
 ###
-GET http://localhost:8000/restaurant/restaurant/3
+GET http://localhost:8000/restaurant/restaurant/8
 
 DELETTING RESTAURANT
 ###
@@ -167,11 +195,22 @@ POST http://localhost:8000/restaurant/insert
  
  {
   "name": "kimkim",
-  "street_address": 3455,
+  "street_address": 34565,
   "zip_code": 5985
 #   "city_id": "767"
-
  }
+
+
+###
+PUT http://localhost:8000/restaurant/update/8
+Content-Type: application/json
+
+{
+  "name": "kimkim",
+  "street_address": 55556,
+  "zip_code": 654
+}
+ 
 
 
 #  MENU_ITEM----------------------------------------------------------------
@@ -211,7 +250,7 @@ GET http://localhost:8000/category/category
  
  GETTING CATEGORY BY_ID
 ###
-GET http://localhost:8000/category/category/5
+GET http://localhost:8000/category/category/2
 
 DELETTING CATEGORY
 ###
@@ -225,6 +264,11 @@ ISERTING CATEGORY
 
 POST http://localhost:8000/category/insert
  Content-Type: application/json
+
+   {
+    "id": 2,
+    "name": "kimzkim"
+  }
 
 
 
@@ -310,6 +354,15 @@ ISERTING ORDER_MENU_ITEM
 POST http://localhost:8000/order_menu_item/insert
  Content-Type: application/json
 
+{
+    "id": 5,
+    "order_id":null,
+    "menu_item_id": null,
+    "quantity": null,
+    "item_price":null ,
+    "price":null ,
+    "comment": null
+  }
 
 
 
@@ -325,11 +378,11 @@ GET http://localhost:8000/order_status/order_status
 ###
 GET http://localhost:8000/order_status/order_status/5
 
+
 DELETTING ORDER_STATUS
 ###
 
-DELETE http://localhost:8000/order_status/delete/5
-
+DELETE http://localhost:8000/order_status/delete/4
 
 
 ISERTING ORDER_STATUS
@@ -338,7 +391,13 @@ ISERTING ORDER_STATUS
 POST http://localhost:8000/order_status/insert
  Content-Type: application/json
 
-
+ 
+  {
+    "id": 7,
+    "order_id": null,
+    "status_catalog_id": null,
+    "created_at": null
+  }
 
 
  
@@ -352,7 +411,7 @@ GET http://localhost:8000/status_catalog/status_catalog
  
  GETTING  STATUS_CATALOG
 ###
-GET http://localhost:8000/status_catalog/status_catalog/5
+GET http://localhost:8000/status_catalog/status_catalog/1
 
 DELETTING STATUS_CATALOG
 ###
@@ -366,6 +425,11 @@ ISERTING STATUS_STATUS
 
 POST http://localhost:8000/status_catalog/insert
  Content-Type: application/json
+
+   {
+    "id": 7,
+    "name": "sumkim"
+  }
 
 
  
@@ -407,7 +471,7 @@ GET http://localhost:8000/driver/driver
  
  GETTING  DRIVER
 ###
-GET http://localhost:8000/driver/driver/5
+GET http://localhost:8000/driver/driver/2
 
 DELETTING DRIVER
 ###
@@ -421,3 +485,14 @@ ISERTING DRIVER
 
 POST http://localhost:8000/driver/insert
  Content-Type: application/json
+
+{
+   "id": 4,
+  "car_make": "china",
+  "car_model": "audi",
+  "car_year": 2024,
+  "user_id": 12,
+  "online": true,
+  "delivering": true,
+  "created_at": null
+}

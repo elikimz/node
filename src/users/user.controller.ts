@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import {  insertusers, deleteusers, getAllUsers, getOneUsers } from "./user.service";
+import {  insertusers, deleteusers, getAllUsers, getOneUsers, updateusers } from "./user.service";
 import { any, number } from "zod";
 import*as bcrypt from "bcrypt";
 
@@ -40,6 +40,19 @@ export const InsertUsersData =async(c: Context)=>{
         return c.json({"message":err},400)
     }
 }
+
+
+export const updateUsersData = async (c: Context) => {
+    const id = c.req.param("id");
+    try {
+        const data = await c.req.json();
+        const result = await updateusers(Number(id), data);  
+     return c.json(result, 200);
+    } catch (err) {
+        return c.json({ "message": err }, 400);
+    }
+}
+
 
 
 // export const loginUsers =async(c: Context)=>{

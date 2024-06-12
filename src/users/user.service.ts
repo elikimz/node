@@ -22,6 +22,11 @@ export const insertusers= async (data: usersInsert)=>{
    return "user inserted successifully"
 } 
 
+export const updateusers= async (id:number,data:Partial<usersInsert>)=>{
+ await db.update(users).set(data).where(eq(users.id,id));
+    return "updated successfully"
+
+} 
 // export const loginusers= async (c:Context)=>{
 //     const details= await caches.req.json()
 //     const users

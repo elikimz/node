@@ -20,3 +20,8 @@ export const insertcity= async (data: cityInsert)=>{
    await db.insert(city).values(data)
    return "user inserted successifully"
 } 
+export const updatecity= async (id:number,data:Partial<cityInsert>)=>{
+    await db.update(city).set(data).where(eq(city.id,id));
+       return "updated successfully"
+   
+  } 

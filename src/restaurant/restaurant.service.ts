@@ -20,9 +20,9 @@ export const deleterestaurant= async (id:number)=>{
 await db.delete(restaurant).where(eq( restaurant.id,id))
 return "deleted successifully"
 } 
-export const updaterestaurant= async (id:number)=>{
-    
-    return "updated successfully"
-
-} 
+export const updaterestaurant= async (id:number,data:Partial<restaurantInsert>)=>{
+    await db.update(restaurant).set(data).where(eq(restaurant.id,id));
+       return "updated successfully"
+   
+  }
  

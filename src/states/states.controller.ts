@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { InsertState, deleteState, getAllStates, getOneState, updateStates } from "./states.services";
+import { InsertState, deleteState, getAllStates, getOneState, updatestates } from "./states.services";
 import { any } from "zod";
 
 export const getAllStatesData =async(c: Context)=>{
@@ -32,8 +32,13 @@ export const deleteStateData =async(c: Context)=>{
     return c.json(data,200)
     
 }
-export const updateStateData =async(c: Context)=>{
-    const id=c.req.param("id")
-    const data=await updateStates(Number(id))
-    return c.json(data,200)
+export const updateStateData = async (c: Context) => {
+    const id = c.req.param("id");
+    try {
+        const data = await c.req.json();
+        const result = await updatestates(Number(id), data);  
+     return c.json(result, 200);
+    } catch (err) {
+        return c.json({ "message": err }, 400);
+    }
 }

@@ -14,7 +14,7 @@ export const getOnestatus_catalog= async (id:number):Promise< status_catalogSele
 } 
 export const Insertstatus_catalog= async (data:  status_catalogInsert)=>{
    await db.insert( status_catalog).values(data)
-   return "state inserted"
+   return "status_catalog inserted successfully lucky you kim"
 } 
 export const deletestatus_catalog= async (id:number)=>{
 

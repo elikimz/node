@@ -20,9 +20,10 @@ export const deleterestaurant_owner= async (id:number)=>{
 await db.delete(restaurant_owner).where(eq( restaurant_owner.id,id))
 return "deleted successifully"
 } 
-export const updaterestaurant_owner= async (id:number)=>{
-    
-    return "updated successfully"
-
-} 
+export const updaterestaurant_owner= async (id:number,data:Partial<restaurant_ownerInsert>)=>{
+    await db.update(restaurant_owner).set(data).where(eq(restaurant_owner.id,id));
+       return "updated successfully"
+   
+  }
+ 
  

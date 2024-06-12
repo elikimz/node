@@ -33,8 +33,13 @@ export const InsertAddressData = async(c:Context)=>{
 }
     
 
-export const updateAddressData =async(c: Context)=>{
-    const id=c.req.param("id")
-    const data=await updateaddress(Number(id))
-    return c.json(data,200)
+export const updateAddressData = async (c: Context) => {
+    const id = c.req.param("id");
+    try {
+        const data = await c.req.json();
+        const result = await updateaddress(Number(id), data);   
+             return c.json(result, 200);
+    } catch (err) {
+        return c.json({ "message": err }, 400);
+    }
 }

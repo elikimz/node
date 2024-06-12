@@ -151,7 +151,7 @@ export const roleEnum = pgEnum("role", ["admin", "user"])
 
 export const Auth = pgTable("auth_on_users", {
     id: serial("id").primaryKey(),
-    usersId: integer("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+    userId: integer("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
     password: varchar("password", { length: 100 }),
     username: varchar("username", { length: 100 }),
     role: roleEnum("role").default("user")
@@ -159,7 +159,7 @@ export const Auth = pgTable("auth_on_users", {
 
 export const AuthOnUsersRelations = relations(Auth, ({ one }) => ({
     user: one(users, {
-        fields: [Auth.usersId],
+        fields: [Auth.userId],
         references: [users.id]
     })
 }));
@@ -240,6 +240,6 @@ export type driverSelect=typeof driver.$inferSelect;
 
 export type driverInsert=typeof driver.$inferInsert;
 
-export type TIAuthOnUser = typeof Auth.$inferInsert;
-export type TSAuthOnUser = typeof Auth.$inferSelect;
+export type AuthOnUser = typeof Auth.$inferInsert;
+export type authOnUser = typeof Auth.$inferSelect;
 

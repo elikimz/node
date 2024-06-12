@@ -1,7 +1,7 @@
 
 import { eq } from "drizzle-orm";
 import db from "../drizzle/db";
-import { state, stateInsert, stateSelect } from "../drizzle/schema";
+import { address, state, stateInsert, stateSelect } from "../drizzle/schema";
 
 export const getAllStates= async (): Promise<stateSelect[] | null>=>{
     
@@ -21,9 +21,11 @@ export const deleteState= async (id:number)=>{
 await db.delete(state).where(eq(state.id,id))
 return "deleted successifully"
 } 
-export const updateStates= async (id:number)=>{
-    
-    return "updated successfully"
 
-} 
- 
+
+
+export const updatestates= async (id:number,data:Partial<stateInsert>)=>{
+    await db.update(state).set(data).where(eq(state.id,id));
+       return "updated successfully"
+   
+   } 

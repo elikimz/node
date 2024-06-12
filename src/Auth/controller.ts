@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { Context } from "hono";
-import { createAuthUserService, userLoginService } from "./service";
+import { createAuthUserService, getOneUsers, userLoginService } from "./service";
 import bycrpt from "bcrypt";
 import { sign } from "hono/jwt";
 
@@ -46,10 +46,19 @@ export const loginUser = async (c: Context) => {
             const token = await sign(payload, secret);   // create a JWT token
             let user = userExist?.user;
             let role = userExist?.role;
-            return c.json({ token, user: { role, ...user } }, 200);  // return token and user details
+            return c.json({ token, user: { role,user } }, 200);  // return token and user details
         }
     } catch (error: any) {
         return c.json({ error: error?.message }, 400)
     }
+
+}
+
+
+export const getOneUserData =async(c: Context)=>{
+    const id = c.req.param("id");
+    const data=await getOneUsers(Number(id))
+    return c.json(data,200)
+
 
 }

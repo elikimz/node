@@ -32,8 +32,13 @@ export const deleterestaurant_ownerData =async(c: Context)=>{
     return c.json(data,200)
     
 }
-export const updaterestaurant_ownerData =async(c: Context)=>{
-    const id=c.req.param("id")
-    const data=await updaterestaurant_owner(Number(id))
-    return c.json(data,200)
+export const updaterestaurant_ownerData = async (c: Context) => {
+    const id = c.req.param("id");
+    try {
+        const data = await c.req.json();
+        const result = await updaterestaurant_owner(Number(id), data);   
+             return c.json(result, 200);
+    } catch (err) {
+        return c.json({ "message": err }, 400);
+    }
 }

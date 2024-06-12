@@ -13,7 +13,7 @@ export const getOnedriver= async (id:number):Promise<driverSelect | undefined> =
 } 
 export const Insertdriver= async (data: driverInsert)=>{
    await db.insert(driver).values(data)
-   return "state inserted"
+   return "driver inserted successfully"
 } 
 export const deletedriver= async (id:number)=>{
 
