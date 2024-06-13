@@ -110,8 +110,7 @@ Content-Type: application/json
 ###
 
 GET http://localhost:8000/users/Users
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyODE0MjR9.aTPC2jBWd8os8XHMsZAMKU2cDIwYVShykmEEp2ncNQk
-###
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTM1MTJ9.pnl67BUBLCgxwWF1DwFvmxV6S9Q8jqZy8-2xXxA8AYw
 
 # Getting user by ID
 GET http://localhost:8000/users/Users/12

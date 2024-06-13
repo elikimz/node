@@ -33,19 +33,19 @@ export const getAllcityrelation = async (): Promise<citySelect[] | null> => {
     return await db.query.city.findMany({
         with: {
             state: {
-                column: {
+                columns: {
                     name: true,
                     code: true
                 },
             },
-            addresses: {
-                column: {
-                    street_address1: true,
+            address: {
+                columns: {
+                    street_address_1: true,
                     city_id: true
                 },
             },
-            restaurants:{
-                column: {
+            restaurant:{
+                columns: {
                     name:true,
                     street_address:true,
                     zip_code:true
