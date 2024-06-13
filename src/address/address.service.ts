@@ -29,19 +29,19 @@ export const getAllAddressWithRelationservice = async (): Promise<addressSelect[
   return await db.query.address.findMany({
     with:{
       user:{
-        column:{
+        columns:{
           name:true,
           email:true
           
         }
       },
       city:{
-        column:{
+        columns:{
           name:true
         }
       },
       orders:{
-        column:{
+        columns:{
           price:true
         }
       }
