@@ -1,9 +1,9 @@
 import { Hono } from "hono";
 import { deleteUsersData, getAllUsersData,getOneUserData,InsertUsersData,updateUsersData} from "./user.controller";
 export const usersRouter = new Hono();
-import { Authorisation } from "../middleware/Authorisation";
+import { adminRoleAuthorisation } from "../middleware/Authorisation";
 
-usersRouter.get("/Users",Authorisation, getAllUsersData)
+usersRouter.get("/Users",adminRoleAuthorisation, getAllUsersData)
 usersRouter.get("/Users/:id",getOneUserData)
 usersRouter.delete("/Users/:id",deleteUsersData)
 usersRouter.post("/insert",InsertUsersData)

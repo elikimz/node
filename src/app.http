@@ -29,13 +29,11 @@ Content-Type: application/json
 }
 
 
-
 #  GETTING ALL USERS----------------------------------------------------------------
 ###
 
 GET http://localhost:8000/users/Users
-   Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoidXNlciIsImV4cCI6MTcxODIyOTgyNn0.YeiZwDrq7ZcZFHeIo7-3Nf5N08dF6enSkafE4iCatFs
-
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyNjUzNDR9.oiU1AuH-cbD3grQ9ZtPTb5U0ZA5Y-3l-lKrcCphq9ro
 ###
 
 # Getting user by ID
@@ -79,9 +77,10 @@ Content-Type: application/json
 Content-Type: application/json
 
   { 
-    "userId":13,
+    "userId":14,
     "username": "Faith Kimani",
-    "password": "4028765455"
+    "password": "4028765455",
+     "role":"admin"
     
   }
 
@@ -452,6 +451,7 @@ POST http://localhost:8000/status_catalog/insert
  # GETTING_ COMMENT
 ###
 GET http://localhost:8000/comment/comment
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyNjUzNDR9.oiU1AuH-cbD3grQ9ZtPTb5U0ZA5Y-3l-lKrcCphq9ro
 
  
  GETTING  COMMENT
