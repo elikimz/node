@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import db from "../drizzle/db";
-import { category, categoryInsert, categorySelect } from "../drizzle/schema";
+import { category, categoryInsert, categorySelect} from "../drizzle/schema";
 
 export const getAllcategory= async (): Promise<categorySelect[] | null>=>{
     
@@ -25,4 +25,19 @@ export const updatecategory= async (id:number)=>{
     return "updated successfully"
 
 } 
+
+export const getAllcategoryrelation= async (): Promise<categorySelect[] | null>=>{
+    
+    return await db.query.category.findMany({
+        with: {
+            menu_item: {
+              columns: {
+                name:true,
+                ingredients:true
+              }
+            }
+        }
+    })
+
+}
  

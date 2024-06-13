@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import {  getAllAddress,getOneAddress,deleteAddress,InsertAddress, updateaddress } from "./address.service";
+import {  getAllAddress,getOneAddress,deleteAddress,InsertAddress, updateaddress,getAllAddressWithRelationservice } from "./address.service";
 import { any, number } from "zod";
 
 export const getAllAddressData = async(c: Context) => {
@@ -42,4 +42,11 @@ export const updateAddressData = async (c: Context) => {
     } catch (err) {
         return c.json({ "message": err }, 400);
     }
+}
+
+
+export const getAllAddressWithRelation = async(c:Context)=>{
+    const id = c.req.param("id");
+    const data=await getAllAddressWithRelationservice();
+    return c.json(data,200)
 }

@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm";
+import { eq, relations } from "drizzle-orm";
 import db from "../drizzle/db";
-import { city, cityInsert, citySelect } from "../drizzle/schema";
+import { address, city, cityInsert, citySelect, restaurant } from "../drizzle/schema";
 
 export const getAllcity = async (): Promise<citySelect[] | null> => {
     return await db.query.city.findMany()
@@ -25,3 +25,32 @@ export const updatecity= async (id:number,data:Partial<cityInsert>)=>{
        return "updated successfully"
    
   } 
+//relations
+
+ 
+
+export const getAllcityrelation = async (): Promise<citySelect[] | null> => {
+    return await db.query.city.findMany({
+        with: {
+            state: {
+                column: {
+                    name: true,
+                    code: true
+                },
+            },
+            addresses: {
+                column: {
+                    street_address1: true,
+                    city_id: true
+                },
+            },
+            restaurants:{
+                column: {
+                    name:true,
+                    street_address:true,
+                    zip_code:true
+                }
+            }
+        },
+    });
+}

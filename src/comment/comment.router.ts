@@ -6,5 +6,5 @@ import { adminRoleAuthorisation } from "../middleware/Authorisation";
  commentRouter.get("/comment",adminRoleAuthorisation,getAllcommentData)
  commentRouter.get("/comment/:id",getOnecommentData)
  commentRouter.post("/insert",InsertcommentData)
- commentRouter.delete("/delete/:id",deletecommentData)
+ commentRouter.delete("/delete/:id",adminRoleAuthorisation,deletecommentData)
  commentRouter.put("/update/:id",updatecommentData)

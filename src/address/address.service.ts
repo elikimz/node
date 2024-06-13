@@ -24,3 +24,27 @@ export const updateaddress= async (id:number,data:Partial<addressInsert>)=>{
      return "updated successfully"
  
 } 
+
+export const getAllAddressWithRelationservice = async (): Promise<addressSelect[] | null> => {
+  return await db.query.address.findMany({
+    with:{
+      user:{
+        column:{
+          name:true,
+          email:true
+          
+        }
+      },
+      city:{
+        column:{
+          name:true
+        }
+      },
+      orders:{
+        column:{
+          price:true
+        }
+      }
+    }
+  })
+}

@@ -1,3 +1,80 @@
+ #  CATEGORY----------------------------------------------------------------
+
+
+ # GETTING_ ALL CATEGORY
+
+###
+GET http://localhost:8000/category/category
+
+ 
+ GETTING CATEGORY BY_ID
+###
+GET http://localhost:8000/category/category/2
+
+DELETTING CATEGORY
+###
+
+DELETE http://localhost:8000/category/delete/1
+
+
+
+ISERTING CATEGORY
+###
+
+POST http://localhost:8000/category/insert
+ Content-Type: application/json
+
+   {
+    "id": 2,
+    "name": "kimzkim"
+  }
+
+###
+GET http://localhost:8000/category/categoryrelation
+
+
+
+ 
+ #  COMMENT----------------------------------------------------------------
+
+
+ # GETTING_ COMMENT
+###
+GET http://localhost:8000/comment/comment
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyODE0MjR9.aTPC2jBWd8os8XHMsZAMKU2cDIwYVShykmEEp2ncNQk
+
+ 
+
+
+GET http://localhost:8000/comment/comment/13
+
+DELETTING COMMENT
+###
+
+DELETE http://localhost:8000/comment/delete/3
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyODE0MjR9.aTPC2jBWd8os8XHMsZAMKU2cDIwYVShykmEEp2ncNQk
+
+
+
+
+ISERTING COMMENT
+###
+
+POST http://localhost:8000/comment/insert
+Content-Type: application/json
+
+  {
+   
+    "order_id": 5,
+    "user_id": 13,
+    "comment_text": "good",
+    "is_complaint": "yes",
+    "is_praise": "no"
+    
+  }
+
+
+ #  STATES----------------------------------------------------------------
 ###
 
 GET  http://localhost:8000/state/states
@@ -33,7 +110,7 @@ Content-Type: application/json
 ###
 
 GET http://localhost:8000/users/Users
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyNjUzNDR9.oiU1AuH-cbD3grQ9ZtPTb5U0ZA5Y-3l-lKrcCphq9ro
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyODE0MjR9.aTPC2jBWd8os8XHMsZAMKU2cDIwYVShykmEEp2ncNQk
 ###
 
 # Getting user by ID
@@ -42,9 +119,10 @@ GET http://localhost:8000/users/Users/12
 ###
 #Deleting user by ID
 DELETE http://localhost:8000/users/Users/152
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyODE0MjR9.aTPC2jBWd8os8XHMsZAMKU2cDIwYVShykmEEp2ncNQk
+
 
 ###
-
 
 POST  http://localhost:8000/users/insert
 Content-Type: application/json
@@ -139,6 +217,8 @@ Content-Type: application/json
       "pzip_code_2": "124"
      }
 
+###
+GET http://localhost:8000/address/addressrelation
 
 
 # RESTAURANT----------------------------------------------------------------------- 
@@ -178,6 +258,9 @@ Content-Type: application/json
   "name": "kimkim",
   "state_id": null
 }
+
+###
+GET http://localhost:8000/city/cityrelation
 
 
  
@@ -251,36 +334,6 @@ ISERTING RESTAURANT_OWNER
 POST http://localhost:8000/restaurant_owner/insert
  Content-Type: application/json
 
-
- #  CATEGORY----------------------------------------------------------------
-
-
- # GETTING_ ALL CATEGORY
-###
-GET http://localhost:8000/category/category
-
- 
- GETTING CATEGORY BY_ID
-###
-GET http://localhost:8000/category/category/2
-
-DELETTING CATEGORY
-###
-
-DELETE http://localhost:8000/category/delete/1
-
-
-
-ISERTING CATEGORY
-###
-
-POST http://localhost:8000/category/insert
- Content-Type: application/json
-
-   {
-    "id": 2,
-    "name": "kimzkim"
-  }
 
 
 
@@ -443,33 +496,6 @@ POST http://localhost:8000/status_catalog/insert
     "name": "sumkim"
   }
 
-
- 
- #  COMMENT----------------------------------------------------------------
-
-
- # GETTING_ COMMENT
-###
-GET http://localhost:8000/comment/comment
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyNjUzNDR9.oiU1AuH-cbD3grQ9ZtPTb5U0ZA5Y-3l-lKrcCphq9ro
-
- 
- GETTING  COMMENT
-###
-GET http://localhost:8000/comment/comment/1
-
-DELETTING COMMENT
-###
-
-DELETE http://localhost:8000/comment/delete/3
-
-
-
-ISERTING COMMENT
-###
-
-POST http://localhost:8000/comment/insert
- Content-Type: application/json
 
 
 

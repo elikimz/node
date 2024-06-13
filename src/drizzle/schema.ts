@@ -15,6 +15,14 @@ export const users = pgTable('users', {
   updated_at: timestamp('updated_at')
 });
 
+export const userRelations = relations(users, ({many}) => ({
+  comment: many(comment),
+  address: many(address),
+  orders: many(orders),
+  driver: many(driver),
+  restaurant_owner: many(restaurant_owner)
+}))
+
 // Define Address model
 export const address = pgTable('address', {
   id: serial('id').primaryKey(),
@@ -27,6 +35,7 @@ export const address = pgTable('address', {
   created_at: timestamp('created_at'),
   updated_at: timestamp('updated_at'),
 });
+
 
 // Define City model
 export const city = pgTable('city', {
@@ -66,6 +75,10 @@ export const category = pgTable('category', {
   name: varchar('name', { length: 255 }),
 });
 
+export const categoryRelations = relations(category, ({many}) => ({
+  menu_item: many(menu_item)
+}))
+
 // Define MenuItem model
 export const menu_item = pgTable('menu_item', {
   id: serial('id').primaryKey(),
@@ -79,6 +92,19 @@ export const menu_item = pgTable('menu_item', {
   created_at: timestamp('created_at'),
   updated_at: timestamp('updated_at'),
 });
+
+
+export const menu_itemRelations = relations(menu_item, ({one, many}) => ({
+    // restaurant: one(restaurant, {
+    //     fields: [menu_item.restaurantid],
+    //     references: [restaurantTable.id]
+    // }),
+    category: one(category, {
+        fields: [menu_item.category_id],
+        references: [category.id]
+    })
+    //order_menu_item: many(order_menu_itemTable)
+}))
 
 // Define Order model
 export const orders = pgTable('orders', {

@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { Insertcategory, deletecategory, getAllcategory, getOnecategory, updatecategory} from "./category.service";
+import { Insertcategory, deletecategory, getAllcategory, getOnecategory, updatecategory,getAllcategoryrelation} from "./category.service";
 import { any } from "zod";
 
 export const getAllcategoryData =async(c: Context)=>{
@@ -36,4 +36,10 @@ export const updatecategoryData =async(c: Context)=>{
     const id=c.req.param("id")
     const data=await updatecategory(Number(id))
     return c.json(data,200)
+}
+
+export const getcategoryrelation =async(c: Context)=>{
+    const data=await getAllcategoryrelation()
+    return c.json(data,200)
+
 }
