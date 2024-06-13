@@ -14,7 +14,7 @@ GET http://localhost:8000/category/category/2
 DELETTING CATEGORY
 ###
 
-DELETE http://localhost:8000/category/delete/1
+DELETE http://localhost:8000/category/delete/10
 
 
 
@@ -24,8 +24,8 @@ ISERTING CATEGORY
 POST http://localhost:8000/category/insert
  Content-Type: application/json
 
-   {
-    "id": 2,
+    {
+    "id": 3,
     "name": "kimzkim"
   }
 
@@ -251,7 +251,7 @@ POST http://localhost:8000/city/insert
  }
 
 ###
-PUT http://localhost:8000/city/update/5
+PUT http://localhost:8000/city/update/4
 Content-Type: application/json
 
 {
@@ -260,7 +260,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8000/city/cityrelation
+GET http://localhost:8000/city/4/cityrelation
 
 
  

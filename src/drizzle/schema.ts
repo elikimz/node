@@ -35,7 +35,19 @@ export const address = pgTable('address', {
   created_at: timestamp('created_at'),
   updated_at: timestamp('updated_at'),
 });
+export const addressRelations = relations(address, ({one, many}) => ({
+  user: one(users, {
+      fields: [address.user_id],
+      references: [users.id]
+  }),
+  city: one(city, {
+    fields: [address.user_id],
+    references: [city.id]
+}),
+  orders: many(orders),
+ 
 
+}));
 
 // Define City model
 export const city = pgTable('city', {
@@ -43,6 +55,14 @@ export const city = pgTable('city', {
   name: varchar('name', { length: 255 }),
   state_id: integer('state_id').references(() => state.id),
 });
+export const cityRelations = relations(city, ({one, many}) => ({
+  state: one(state, {
+      fields: [city.state_id],
+      references: [state.id]
+  }),
+  restaurant: many(restaurant),
+  address: many(address)
+}))
 
 // Define State model
 export const state = pgTable('state', {
@@ -50,6 +70,10 @@ export const state = pgTable('state', {
   name: varchar('name', { length: 255 }),
   code: varchar('code', { length: 255 }),
 });
+export const stateRelations = relations(state, ({many}) => ({
+  city: many(city)
+}))
+
 
 // Define Restaurant model
 export const restaurant = pgTable('restaurant', {
@@ -61,6 +85,15 @@ export const restaurant = pgTable('restaurant', {
   created_at: timestamp('created_at'),
   updated_at: timestamp('updated_at'),
 });
+export const restaurantRelations = relations(restaurant, ({one, many}) => ({
+  city: one(city, {
+      fields: [restaurant.city_id],
+      references: [city.id]
+  }),
+  menu_item: many(menu_item),
+  orders: many(orders),
+  restaurant_owner: many(restaurant_owner)
+}))
 
 // Define RestaurantOwner model
 export const restaurant_owner = pgTable('restaurant_owner', {
@@ -68,6 +101,16 @@ export const restaurant_owner = pgTable('restaurant_owner', {
   restaurant_id: integer('restaurant_id').references(() => restaurant.id),
   owner_id: integer('owner_id').references(() => users.id),
 });
+export const restaurant_ownerRelations = relations(restaurant_owner, ({one}) => ({
+  restaurant: one(restaurant, {
+      fields: [restaurant_owner.restaurant_id],
+      references: [restaurant.id]
+  }),
+  user: one(users, {
+      fields: [restaurant_owner.owner_id],
+      references: [users.id]
+  })
+}))
 
 // Define Category model
 export const category = pgTable('category', {
@@ -95,15 +138,15 @@ export const menu_item = pgTable('menu_item', {
 
 
 export const menu_itemRelations = relations(menu_item, ({one, many}) => ({
-    // restaurant: one(restaurant, {
-    //     fields: [menu_item.restaurantid],
-    //     references: [restaurantTable.id]
-    // }),
-    category: one(category, {
-        fields: [menu_item.category_id],
-        references: [category.id]
-    })
-    //order_menu_item: many(order_menu_itemTable)
+  restaurant: one(restaurant, {
+      fields: [menu_item.restaurant_id],
+      references: [restaurant.id]
+  }),
+  category: one(category, {
+      fields: [menu_item.category_id],
+      references: [category.id]
+  }),
+  order_menu_item: many(order_menu_item)
 }))
 
 // Define Order model
@@ -122,6 +165,28 @@ export const orders = pgTable('orders', {
   created_at: timestamp('created_at'),
   updated_at: timestamp('updated_at'),
 });
+export const ordersRelations = relations(orders, ({one, many}) => ({
+  user: one(users, {
+      fields: [orders.user_id],
+      references: [users.id]
+  }),
+  driver: one(driver, {
+      fields: [orders.driver_id],
+      references: [driver.id]
+  }),
+  restaurant: one(restaurant, {
+      fields: [orders.restaurant_id],
+      references: [restaurant.id]
+  }),
+  address: one(address, {
+      fields: [orders.delivery_address_id],
+      references: [address.id]
+  }),
+  order_status: many(order_status),
+  comments: many(comment),
+  order_menu_item: many(order_menu_item)
+}))
+
 
 // Define OrderMenuItem model
  export const order_menu_item = pgTable('order_menu_item', {
@@ -133,6 +198,17 @@ export const orders = pgTable('orders', {
   price: decimal('price'),
   comment: varchar('comment', { length: 255 }),
 });
+export const order_menu_itemRelations = relations(order_menu_item, ({one}) => ({
+  order: one(orders, {
+      fields: [order_menu_item.order_id],
+      references: [orders.id]
+  }),
+  menu_item: one(menu_item, {
+      fields: [order_menu_item.menu_item_id],
+      references: [menu_item.id]
+  })
+}))
+
 
 // Define OrderStatus model
 export const order_status = pgTable('order_status', {
@@ -141,12 +217,26 @@ export const order_status = pgTable('order_status', {
   status_catalog_id: integer('status_catalog_id').references(() => status_catalog.id),
   created_at: timestamp('created_at'),
 });
+export const order_statusRelations = relations(order_status, ({one}) => ({
+  order: one(orders, {
+      fields: [order_status.order_id],
+      references: [orders.id]
+  }),
+  status_catalog: one(status_catalog, {
+      fields: [order_status.status_catalog_id],
+      references: [status_catalog.id]
+  })
+}))
+
 
 // Define StatusCatalog model
  export const status_catalog = pgTable('status_catalog', {
   id: serial('id').primaryKey(),
   name: varchar('name', { length: 255 }),
 });
+export const status_catalogRelations = relations(status_catalog, ({many}) => ({
+  order_status: many(order_status)
+}))
 
 //export Comment model
  export const comment = pgTable('comment', {
@@ -160,6 +250,17 @@ export const order_status = pgTable('order_status', {
   updated_at: timestamp('updated_at'),
 });
 
+export const commentRelations = relations(comment, ({one}) => ({
+  user: one(users, {
+      fields: [comment.user_id],
+      references: [users.id]
+  }),
+  orders: one(orders, {
+      fields: [comment.order_id],
+      references: [orders.id]    
+  })
+}))
+
 // Define Driver model
 export const driver = pgTable('driver', {
   id: serial('id').primaryKey(),
@@ -172,6 +273,16 @@ export const driver = pgTable('driver', {
   created_at: timestamp('created_at'),
   updated_at: timestamp('updated_at'),
 });
+export const driverRelations = relations(driver, ({one, many}) => ({
+  user: one(users, {
+      fields: [driver.user_id],
+      references: [users.id]
+  }),
+  orders: many(orders)
+}))
+
+
+
 
 export const roleEnum = pgEnum("role", ["admin", "user"])
 
