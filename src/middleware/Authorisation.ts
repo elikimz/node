@@ -2,7 +2,6 @@ import "dotenv/config";
 import { verify } from "hono/jwt"
 import { Context, Next } from "hono";
 
-//AUTHENTICATION MIDDLEWARE
 export const verifyToken = async (token: string, secret: string) => {
     try {
         const decoded = await verify(token as string, secret)
@@ -11,7 +10,7 @@ export const verifyToken = async (token: string, secret: string) => {
         return null
     }
 }
-//AUTHORIZATION MIDDLEWARE
+
 export const AuthorisationMiddleware = async (c: Context, next: Next, requiredRole: string) => {
     const token = c.req.header("Authorization");
 
