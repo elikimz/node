@@ -15,14 +15,23 @@ import { order_statusRouter } from './order_status/order_status.router'
 import { status_catalogRouter } from './status_catalog/status_catalog.router'
 import { commentRouter } from './comment/comment.router'
 import { driverRouter } from './driver/driver.router'
-import { authRouter } from './Auth/router'  
+import { authRouter } from './Auth/router' 
+import { readFile } from 'fs/promises'
 
 const app =new Hono()
-app.get('/',(c)=>{
-  return c.text("hello hono")
+// app.get('/',(c)=>{
+//   return c.text("hello hono")
 
-})
+// })
 
+app.get('/', async (c) => {
+  try {
+    let html = await readFile('./index.html', 'utf-8');
+    return c.html(html);
+  } catch (error: any) {
+    return c.text(error.message,500);
+  }
+});
 app.route("/",stateRouter)
 app.route("/", usersRouter)
 app.route("/",addressRouter)   
