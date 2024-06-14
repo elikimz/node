@@ -6,6 +6,6 @@ import { InsertrestaurantData, deleterestaurantData, getAllrestaurantData, getOn
 
 restaurantRouter.get("/restaurant",getAllrestaurantData)
 restaurantRouter.get("/restaurant/:id",getOnerestaurantData)
-restaurantRouter.post("/insert",InsertrestaurantData)
-restaurantRouter.delete("/delete/:id",deleterestaurantData)
-restaurantRouter.put("/update/:id",updaterestaurantData)
+restaurantRouter.post("/restaurant",InsertrestaurantData)
+restaurantRouter.delete("/restaurant/:id",deleterestaurantData)
+restaurantRouter.put("/restaurant/:id",updaterestaurantData)

@@ -3,9 +3,9 @@ import { deleteUsersData, getAllUsersData,getOneUserData,InsertUsersData,updateU
 export const usersRouter = new Hono();
 import { adminRoleAuthorisation } from "../middleware/Authorisation";
 
-usersRouter.get("/Users",adminRoleAuthorisation, getAllUsersData)
-usersRouter.get("/Users/:id",getOneUserData)
-usersRouter.delete("/Users/:id",adminRoleAuthorisation,deleteUsersData)
-usersRouter.post("/insert",InsertUsersData)
-usersRouter.put("/update/:id",updateUsersData)
+usersRouter.get("/users",adminRoleAuthorisation, getAllUsersData)
+usersRouter.get("/users/:id",getOneUserData)
+usersRouter.delete("/users/:id",adminRoleAuthorisation,deleteUsersData)
+usersRouter.post("/users",InsertUsersData)
+usersRouter.put("/users/:id",updateUsersData)
 // usersRouter.post("/login",loginUsersData)

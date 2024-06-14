@@ -6,6 +6,6 @@ import { InsertdriverData, deletedriverData, getAlldriverData, getOnedriverData,
 
  driverRouter.get("/driver",getAlldriverData)
  driverRouter.get("/driver/:id",getOnedriverData)
- driverRouter.post("/insert",InsertdriverData)
- driverRouter.delete("/delete/:id",deletedriverData)
- driverRouter.put("/update/:id",updatedriverData)
+ driverRouter.post("/driver",InsertdriverData)
+ driverRouter.delete("driver/:id",deletedriverData)
+ driverRouter.put("/driver/:id",updatedriverData)

@@ -5,5 +5,5 @@ export const  status_catalogRouter = new Hono()
 
 status_catalogRouter.get("/status_catalog", getAllstatus_catalogData)
 status_catalogRouter.get("/status_catalog/:id",getOnestatus_catalogData)
-status_catalogRouter.delete("/delete/:id",deletestatus_catalogData)
-status_catalogRouter.post("/insert",Insertstatus_catalogData)
+status_catalogRouter.delete("/status_catalog/:id",deletestatus_catalogData)
+status_catalogRouter.post("/status_catalog",Insertstatus_catalogData)

@@ -5,7 +5,7 @@ import { InsertStateData, deleteStateData, getAllStatesData, getOneStateData, up
  export const stateRouter=new Hono()
 
 stateRouter.get("/states",getAllStatesData)
-stateRouter.get("/state/:id",getOneStateData)
-stateRouter.post("/insert",InsertStateData)
-stateRouter.delete("/delete/:id",deleteStateData)
-stateRouter.put("/update/:id",updateStateData)
+stateRouter.get("/states/:id",getOneStateData)
+stateRouter.post("/states",InsertStateData)
+stateRouter.delete("/states/:id",deleteStateData)
+stateRouter.put("/states/:id",updateStateData)

@@ -16,22 +16,28 @@ import { status_catalogRouter } from './status_catalog/status_catalog.router'
 import { commentRouter } from './comment/comment.router'
 import { driverRouter } from './driver/driver.router'
 import { authRouter } from './Auth/router'  
+
 const app =new Hono()
-app.route("/state",stateRouter)
-app.route("/users", usersRouter)
-app.route("/address",addressRouter)   
-app.route("/city", cityRouter)
-app.route("/restaurant", restaurantRouter)
-app.route("/restaurant_owner", restaurant_ownerRouter)
-app.route("/category", categoryRouter)
-app.route("/menu_item",menu_itemRouter)
-app.route("/orders",ordersRouter)
-app.route("/order_menu_item",order_menu_itemRouter)
-app.route("/order_status",order_statusRouter)
-app.route("/status_catalog",status_catalogRouter)
-app.route("/comment",commentRouter)
-app.route("/driver",driverRouter)
-app.route("/Auth",authRouter)
+app.get('/',(c)=>{
+  return c.text("hello hono")
+
+})
+
+app.route("/",stateRouter)
+app.route("/", usersRouter)
+app.route("/",addressRouter)   
+app.route("/", cityRouter)
+app.route("/", restaurantRouter)
+app.route("/", restaurant_ownerRouter)
+app.route("/", categoryRouter)
+app.route("/",menu_itemRouter)
+app.route("/",ordersRouter)
+app.route("/",order_menu_itemRouter)
+app.route("/",order_statusRouter)
+app.route("/",status_catalogRouter)
+app.route("/",commentRouter)
+app.route("/",driverRouter)
+app.route("/auth",authRouter)
 serve({
   fetch: app.fetch,
   port: Number(process.env.PORT)

@@ -4,24 +4,24 @@
  # GETTING_ ALL CATEGORY
 
 ###
-GET http://localhost:8000/category/category
+GET http://localhost:8000
 
  
  GETTING CATEGORY BY_ID
 ###
-GET http://localhost:8000/category/category/2
+GET http://localhost:8000/category/2
 
 DELETTING CATEGORY
 ###
 
-DELETE http://localhost:8000/category/delete/10
+DELETE http://localhost:8000/category/10
 
 
 
 ISERTING CATEGORY
 ###
 
-POST http://localhost:8000/category/insert
+POST http://localhost:8000/category
  Content-Type: application/json
 
     {
@@ -30,7 +30,7 @@ POST http://localhost:8000/category/insert
   }
 
 ###
-GET http://localhost:8000/category/categoryrelation
+GET http://localhost:8000/categoryrelation
 
 
 
@@ -40,18 +40,19 @@ GET http://localhost:8000/category/categoryrelation
 
  # GETTING_ COMMENT
 ###
-GET http://localhost:8000/comment/comment
+GET http://localhost:8000/comment
 Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyODE0MjR9.aTPC2jBWd8os8XHMsZAMKU2cDIwYVShykmEEp2ncNQk
 
+###
+
+GET http://localhost:8000/comment/13
  
 
-
-GET http://localhost:8000/comment/comment/13
 
 DELETTING COMMENT
 ###
 
-DELETE http://localhost:8000/comment/delete/3
+DELETE http://localhost:8000/delete/3
 Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyODE0MjR9.aTPC2jBWd8os8XHMsZAMKU2cDIwYVShykmEEp2ncNQk
 
 
@@ -77,16 +78,16 @@ Content-Type: application/json
  #  STATES----------------------------------------------------------------
 ###
 
-GET  http://localhost:8000/state/states
+GET  http://localhost:8000/states
 
 ###
-GET  http://localhost:8000/state/state/4
+GET  http://localhost:8000/states/4
 ###
 
-DELETE http://localhost:8000/state/delete/3
+DELETE http://localhost:8000/delete/3
 ###
 
-POST  http://localhost:8000/state/insert
+POST  http://localhost:8000/insert
 Content-Type: application/json
 
 {
@@ -97,7 +98,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:8000/state/update/4
+PUT http://localhost:8000/update/4
 Content-Type: application/json
 
 {
@@ -109,21 +110,22 @@ Content-Type: application/json
 #  GETTING ALL USERS----------------------------------------------------------------
 ###
 
-GET http://localhost:8000/users/Users
+GET http://localhost:8000/users
 Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTM1MTJ9.pnl67BUBLCgxwWF1DwFvmxV6S9Q8jqZy8-2xXxA8AYw
 
 # Getting user by ID
-GET http://localhost:8000/users/Users/12
+###
+GET http://localhost:8000/users/12
 
 ###
 #Deleting user by ID
-DELETE http://localhost:8000/users/Users/152
+DELETE http://localhost:8000/users/152
 Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyODE0MjR9.aTPC2jBWd8os8XHMsZAMKU2cDIwYVShykmEEp2ncNQk
 
 
 ###
 
-POST  http://localhost:8000/users/insert
+POST  http://localhost:8000/users
 Content-Type: application/json
 
 {
@@ -139,7 +141,7 @@ Content-Type: application/json
 #   "updated_at": null
 }
 ###
-PUT http://localhost:8000/users/update/11
+PUT http://localhost:8000/update/11
 Content-Type: application/json
 
 {
@@ -150,7 +152,7 @@ Content-Type: application/json
 
 ###
 
- POST   http://localhost:8000/Auth/register
+ POST   http://localhost:8000/auth/register
 Content-Type: application/json
 
   { 
@@ -179,24 +181,24 @@ GET http://localhost:8000/Auth/Users/12
 
 # GETTING_ ALL ADDRESS----------------------------------------------------------------
 ###
-GET http://localhost:8000/address/address
+GET http://localhost:8000/address
 
  
  GETTING ADDRESS BY_ID
 ###
-GET http://localhost:8000/address/address/5
+GET http://localhost:8000/address/5
 
 DELETTING ADDRESS
 ###
 
-DELETE http://localhost:8000/address/address/5
+DELETE http://localhost:8000/address/5
 
 
 
 ISERTING ADDRESS
 
 ###
- POST http://localhost:8000/address/insert
+ POST http://localhost:8000/insert
  Content-Type: application/json
 
 {
@@ -208,7 +210,7 @@ ISERTING ADDRESS
 
 ###
 
-PUT http://localhost:8000/address/update/5
+PUT http://localhost:8000/update/5
 Content-Type: application/json
 
      {
@@ -217,31 +219,31 @@ Content-Type: application/json
      }
 
 ###
-GET http://localhost:8000/address/addressrelation
+GET http://localhost:8000/addressrelation
 
 
 # RESTAURANT----------------------------------------------------------------------- 
 
  # GETTING_ ALL CITY
 ###
-GET http://localhost:8000/city/city
+GET http://localhost:8000/city
 
  
  GETTING CITY BY_ID
 ###
-GET http://localhost:8000/city/city/5
+GET http://localhost:8000/city/5
 
 DELETTING CITY
 ###
 
-DELETE http://localhost:8000/city/city/50
+DELETE http://localhost:8000/city/50
 
 
 
 ISERTING CITY
 ###
 
-POST http://localhost:8000/city/insert
+POST http://localhost:8000/insert
  Content-Type: application/json
 
  {
@@ -250,7 +252,7 @@ POST http://localhost:8000/city/insert
  }
 
 ###
-PUT http://localhost:8000/city/update/4
+PUT http://localhost:8000/update/4
 Content-Type: application/json
 
 {
@@ -259,7 +261,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8000/city/4/cityrelation
+GET http://localhost:8000/cityrelation
 
 
  
@@ -267,24 +269,24 @@ GET http://localhost:8000/city/4/cityrelation
 
  # GETTING_ ALL RESTAURANT
 ###
-GET http://localhost:8000/restaurant/restaurant
+GET http://localhost:8000/restaurant
 
  
  GETTING RESTAURANT BY_ID
 ###
-GET http://localhost:8000/restaurant/restaurant/8
+GET http://localhost:8000/restaurant/8
 
 DELETTING RESTAURANT
 ###
 
-DELETE http://localhost:8000/restaurant/delete/1
+DELETE http://localhost:8000/delete/1
 
 
 
 ISERTING RESTAURANT
 ###
 
-POST http://localhost:8000/restaurant/insert
+POST http://localhost:8000/insert
  Content-Type: application/json
  
  {
@@ -296,7 +298,7 @@ POST http://localhost:8000/restaurant/insert
 
 
 ###
-PUT http://localhost:8000/restaurant/update/8
+PUT http://localhost:8000/update/8
 Content-Type: application/json
 
 {
@@ -312,25 +314,25 @@ Content-Type: application/json
 
  # GETTING_ ALL MENU_ITEM
 ###
-GET http://localhost:8000/restaurant_owner/restaurant_owner
+GET http://localhost:8000/restaurant_owner
 
  
  GETTING RESTAURANT_OWNER BY_ID
 ###
-GET http://localhost:8000/restaurant_owner/restaurant_owner/5
+GET http://localhost:8000/restaurant_owner/5
 
 
 DELETTING RESTAURANT_OWNER
 ###
 
-DELETE http://localhost:8000/restaurant_owner/delete/2
+DELETE http://localhost:8000/delete/2
 
 
 
 ISERTING RESTAURANT_OWNER
 ###
 
-POST http://localhost:8000/restaurant_owner/insert
+POST http://localhost:8000/insert
  Content-Type: application/json
 
 
@@ -341,24 +343,24 @@ POST http://localhost:8000/restaurant_owner/insert
 
  # GETTING_ ALL ITEM
 ###
-GET http://localhost:8000/menu_item/menu_item
+GET http://localhost:8000/menu_item
 
  
  GETTING MENU_ITEM  BY_ID
 ###
-GET http://localhost:8000/menu_item/menu_item/5
+GET http://localhost:8000/menu_item/5
 
 DELETTING MENU_ITEM
 ###
 
-DELETE http://localhost:8000/menu_item/delete/1
+DELETE http://localhost:8000/delete/1
 
 
 
 ISERTING MENU_ITEM
 ###
 
-POST http://localhost:8000/menu_item/insert
+POST http://localhost:8000/insert
  Content-Type: application/json
 
 
@@ -372,24 +374,24 @@ POST http://localhost:8000/menu_item/insert
 
  # GETTING_ ALL ORDER
 ###
-GET http://localhost:8000/orders/orders
+GET http://localhost:8000/orders
 
  
  GETTING ORDER BY_ID
 ###
-GET http://localhost:8000/orders/orders/5
+GET http://localhost:8000/orders/5
 
 DELETTING ORDER
 ###
 
-DELETE http://localhost:8000/orders/delete/1
+DELETE http://localhost:8000/delete/1
 
 
 
 ISERTING ORDERS
 ###
 
-POST http://localhost:8000/orders/insert
+POST http://localhost:8000/insert
  Content-Type: application/json
 
 
@@ -398,24 +400,24 @@ POST http://localhost:8000/orders/insert
 
  # GETTING_ ALL ORDER_MENU_ITEM
 ###
-GET http://localhost:8000/order_menu_item/order_menu_item
+GET http://localhost:8000/order_menu_item
 
  
  GETTING  ORDER_MENU_ITEM BY_ID
 ###
-GET http://localhost:8000/order_menu_item/order_menu_item/5
+GET http://localhost:8000/order_menu_item/5
 
 DELETTING ORDER_MENU_ITEM
 ###
 
-DELETE http://localhost:8000/order_menu_item/delete/5
+DELETE http://localhost:8000/delete/5
 
 
 
 ISERTING ORDER_MENU_ITEM
 ###
 
-POST http://localhost:8000/order_menu_item/insert
+POST http://localhost:8000/insert
  Content-Type: application/json
 
 {
@@ -435,24 +437,24 @@ POST http://localhost:8000/order_menu_item/insert
 
  # GETTING_ ALL ORDER_STATUS
 ###
-GET http://localhost:8000/order_status/order_status
+GET http://localhost:8000/order_status
 
  
  GETTING  ORDER_STATUS  
 ###
-GET http://localhost:8000/order_status/order_status/5
+GET http://localhost:8000/order_status/5
 
 
 DELETTING ORDER_STATUS
 ###
 
-DELETE http://localhost:8000/order_status/delete/4
+DELETE http://localhost:8000/delete/4
 
 
 ISERTING ORDER_STATUS
 ###
 
-POST http://localhost:8000/order_status/insert
+POST http://localhost:8000/insert
  Content-Type: application/json
 
  
@@ -470,24 +472,24 @@ POST http://localhost:8000/order_status/insert
 
  # GETTING_ ALL STATUS_CATALOG
 ###
-GET http://localhost:8000/status_catalog/status_catalog
+GET http://localhost:8000/status_catalog
 
  
  GETTING  STATUS_CATALOG
 ###
-GET http://localhost:8000/status_catalog/status_catalog/1
+GET http://localhost:8000/status_catalog/1
 
 DELETTING STATUS_CATALOG
 ###
 
-DELETE http://localhost:8000/status_catalog/delete/2
+DELETE http://localhost:8000/status_catalog/2
 
 
 
 ISERTING STATUS_STATUS
 ###
 
-POST http://localhost:8000/status_catalog/insert
+POST http://localhost:8000/status_catalog
  Content-Type: application/json
 
    {
@@ -504,24 +506,24 @@ POST http://localhost:8000/status_catalog/insert
 
  # GETTING_ DRIVER
 ###
-GET http://localhost:8000/driver/driver
+GET http://localhost:8000/driver
 
  
  GETTING  DRIVER
 ###
-GET http://localhost:8000/driver/driver/2
+GET http://localhost:8000/driver/2
 
 DELETTING DRIVER
 ###
 
-DELETE http://localhost:8000/driver/delete/5
+DELETE http://localhost:8000/delete/5
 
 
 
 ISERTING DRIVER
 ###
 
-POST http://localhost:8000/driver/insert
+POST http://localhost:8000/insert
  Content-Type: application/json
 
 {

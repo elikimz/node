@@ -6,6 +6,6 @@ import { InsertordersData, deleteordersData, getAllordersData, getOneordersData,
 
  ordersRouter.get("/orders",getAllordersData)
  ordersRouter.get("/orders/:id",getOneordersData)
- ordersRouter.post("/insert",InsertordersData)
- ordersRouter.delete("/delete/:id",deleteordersData)
- ordersRouter.put("/update/:id",updateordersData)
+ ordersRouter.post("/orders",InsertordersData)
+ ordersRouter.delete("/orders/:id",deleteordersData)
+ ordersRouter.put("/orders/:id",updateordersData)

@@ -6,8 +6,8 @@ import { InsertcategoryData, deletecategoryData, getAllcategoryData, getOnecateg
 
  categoryRouter.get("/category",getAllcategoryData)
  categoryRouter.get("/category/:id",getOnecategoryData)
- categoryRouter.post("/insert",InsertcategoryData)
- categoryRouter.delete("/delete/:id",deletecategoryData)
- categoryRouter.put("/update/:id",updatecategoryData)
+ categoryRouter.post("/category",InsertcategoryData)
+ categoryRouter.delete("/category/:id",deletecategoryData)
+ categoryRouter.put("/category/:id",updatecategoryData)
  
  categoryRouter.get("/categoryrelation", getcategoryrelation)
