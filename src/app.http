@@ -331,8 +331,16 @@ DELETE http://localhost:8000/restaurant_owner/2
 ISERTING RESTAURANT_OWNER
 ###
 
-POST http://localhost:8000/insert
+POST http://localhost:8000/restaurant_owner
  Content-Type: application/json
+
+  {
+    "id": 6,
+    "restaurant_id":2,
+    "owner_id": 2
+  }
+
+
 
 
 
