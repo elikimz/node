@@ -4,7 +4,7 @@
  # GETTING_ ALL CATEGORY
 
 ###
-GET http://localhost:8000
+GET http://localhost:8000/
 
  
  GETTING CATEGORY BY_ID
@@ -41,7 +41,7 @@ GET http://localhost:8000/categoryrelation
  # GETTING_ COMMENT
 ###
 GET http://localhost:8000/comment
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyODE0MjR9.aTPC2jBWd8os8XHMsZAMKU2cDIwYVShykmEEp2ncNQk
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTg1MzIzODl9.9pN4xvhNsKBha7h-u2kxbQUWGiEVwj3N1ZcK--S63L0
 
 ###
 
@@ -52,8 +52,8 @@ GET http://localhost:8000/comment/13
 DELETTING COMMENT
 ###
 
-DELETE http://localhost:8000/delete/3
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyODE0MjR9.aTPC2jBWd8os8XHMsZAMKU2cDIwYVShykmEEp2ncNQk
+DELETE http://localhost:8000/comment/3
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTg1MzIzODl9.9pN4xvhNsKBha7h-u2kxbQUWGiEVwj3N1ZcK--S63L0
 
 
 
@@ -61,7 +61,7 @@ Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiL
 ISERTING COMMENT
 ###
 
-POST http://localhost:8000/comment/insert
+POST http://localhost:8000/comment
 Content-Type: application/json
 
   {
@@ -84,7 +84,7 @@ GET  http://localhost:8000/states
 GET  http://localhost:8000/states/4
 ###
 
-DELETE http://localhost:8000/delete/3
+DELETE http://localhost:8000/states/3
 ###
 
 POST  http://localhost:8000/insert
@@ -111,7 +111,7 @@ Content-Type: application/json
 ###
 
 GET http://localhost:8000/users
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTM1MTJ9.pnl67BUBLCgxwWF1DwFvmxV6S9Q8jqZy8-2xXxA8AYw
+Authorization:
 
 # Getting user by ID
 ###
@@ -120,8 +120,7 @@ GET http://localhost:8000/users/12
 ###
 #Deleting user by ID
 DELETE http://localhost:8000/users/152
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyODE0MjR9.aTPC2jBWd8os8XHMsZAMKU2cDIwYVShykmEEp2ncNQk
-
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTg1MzIzODl9.9pN4xvhNsKBha7h-u2kxbQUWGiEVwj3N1ZcK--S63L0
 
 ###
 
@@ -165,7 +164,7 @@ Content-Type: application/json
 
 ###
 
-POST    http://localhost:8000/Auth/login
+POST    http://localhost:8000/auth/login
 Content-Type: application/json
 
   {  
