@@ -87,7 +87,7 @@ GET  http://localhost:8000/states/4
 DELETE http://localhost:8000/states/3
 ###
 
-POST  http://localhost:8000/insert
+POST  http://localhost:8000/states
 Content-Type: application/json
 
 {
@@ -98,7 +98,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:8000/update/4
+PUT http://localhost:8000/states/4
 Content-Type: application/json
 
 {
@@ -111,7 +111,7 @@ Content-Type: application/json
 ###
 
 GET http://localhost:8000/users
-Authorization:
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJGYWl0aCBLaW1hbmkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTg1MzIzODl9.9pN4xvhNsKBha7h-u2kxbQUWGiEVwj3N1ZcK--S63L0
 
 # Getting user by ID
 ###
@@ -140,7 +140,7 @@ Content-Type: application/json
 #   "updated_at": null
 }
 ###
-PUT http://localhost:8000/update/11
+PUT http://localhost:8000/users/11
 Content-Type: application/json
 
 {
@@ -173,7 +173,7 @@ Content-Type: application/json
   }
 
 ###
-GET http://localhost:8000/Auth/Users/12
+GET http://localhost:8000/users/12
 
 
 
@@ -251,7 +251,7 @@ POST http://localhost:8000/insert
  }
 
 ###
-PUT http://localhost:8000/update/4
+PUT http://localhost:8000/city/4
 Content-Type: application/json
 
 {
@@ -278,7 +278,7 @@ GET http://localhost:8000/restaurant/8
 DELETTING RESTAURANT
 ###
 
-DELETE http://localhost:8000/delete/1
+DELETE http://localhost:8000/restaurant/1
 
 
 
@@ -324,7 +324,7 @@ GET http://localhost:8000/restaurant_owner/5
 DELETTING RESTAURANT_OWNER
 ###
 
-DELETE http://localhost:8000/delete/2
+DELETE http://localhost:8000/restaurant_owner/2
 
 
 
@@ -352,7 +352,7 @@ GET http://localhost:8000/menu_item/5
 DELETTING MENU_ITEM
 ###
 
-DELETE http://localhost:8000/delete/1
+DELETE http://localhost:8000/menu_item/1
 
 
 
@@ -383,7 +383,7 @@ GET http://localhost:8000/orders/5
 DELETTING ORDER
 ###
 
-DELETE http://localhost:8000/delete/1
+DELETE http://localhost:8000/orders/1
 
 
 
@@ -409,7 +409,7 @@ GET http://localhost:8000/order_menu_item/5
 DELETTING ORDER_MENU_ITEM
 ###
 
-DELETE http://localhost:8000/delete/5
+DELETE http://localhost:8000/order_menu_item/5
 
 
 
@@ -447,7 +447,7 @@ GET http://localhost:8000/order_status/5
 DELETTING ORDER_STATUS
 ###
 
-DELETE http://localhost:8000/delete/4
+DELETE http://localhost:8000/order_status/4
 
 
 ISERTING ORDER_STATUS
@@ -515,7 +515,7 @@ GET http://localhost:8000/driver/2
 DELETTING DRIVER
 ###
 
-DELETE http://localhost:8000/delete/5
+DELETE http://localhost:8000/driver/5
 
 
 
