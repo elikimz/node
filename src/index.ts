@@ -17,6 +17,7 @@ import { commentRouter } from './comment/comment.router'
 import { driverRouter } from './driver/driver.router'
 import { authRouter } from './Auth/router' 
 import { readFile } from 'fs/promises'
+import mailFuction from './mails' 
 
 const app =new Hono()
 // app.get('/',(c)=>{
@@ -53,3 +54,4 @@ serve({
 })
 console.log(`Server is running on port ${process.env.PORT}`)
 
+mailFuction();
