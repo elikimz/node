@@ -3,7 +3,7 @@ cron.schedule('*/10 * * * * *' ,() => {
     console.log("hello")
   
   });
-  // cron.schedule(' * * * * *' ,() => {
-  //   console.log("hello kimkim")
+  cron.schedule(' * * * * *' ,() => {
+    console.log("hello kimkim")
   
-  // });
+  });
