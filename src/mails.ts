@@ -15,8 +15,8 @@ const mailFunction = () => {
     const mailOptions = {
         from: process.env.EMAIL,
         to: "elijahkimani1293@gmail.com",
-        subject: "Sending sample email",
-        text: "Testing of nodemailer email"
+        subject: "ATTACHMENT REPORT",
+        text: "During this week of my industrial attachment"
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
